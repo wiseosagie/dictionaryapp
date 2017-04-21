@@ -2,26 +2,32 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { wordUpdate } from '../actions';
-import { CardSection, Input } from './common';
+import { CardSection, Input, Inputs } from './common';
+import InputWord from './common';
+
 
 class WordForm extends Component {
+
   render() {
+    const { textStyle } = styles;
     return (
       <View>
+                    <Text style={textStyle}> New Word</Text>
               <CardSection>
-                <Input
-                  label="New Word"
+
+                <Inputs
+                  //label="New Word"
                   placeholder="Enter a Term here"
                   value={this.props.newword}
                   onChangeText={value => this.props.wordUpdate({ prop: 'newword', value })}
                 />
               </CardSection>
 
-
+  <Text style={textStyle}> Definition</Text>
               <CardSection style={{ }}>
-                <Input
-                  style={{ height: 60}}
-                  label="Definition"
+                <Inputs
+                  //style={{ height: 60}}
+                  //label="Definition"
                   placeholder="This is ....."
                   value={this.props.definition}
 
@@ -34,9 +40,15 @@ class WordForm extends Component {
   }
 }
 const styles = {
-  definitionStyle: {
-    fontSize: 12,
-    multiline:true
+  textStyle: {
+    fontSize: 18,
+    multiline:true,
+    backgroundColor: 'transparent',
+    alignSelf: 'center',
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
   }
 };
 

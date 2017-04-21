@@ -9,4 +9,5 @@ import {
 } from 'react-native';
 import App from './src/App';
 
+
 AppRegistry.registerComponent('dictionary', () => App);

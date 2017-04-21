@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
@@ -36,6 +36,7 @@ class LoginForm extends Component {
 
   render() {
     return (
+      <Image source={require('../images/medii.png')}>
       <Card>
 
 
@@ -51,7 +52,7 @@ class LoginForm extends Component {
         <CardSection>
         <Input
           secureTextEntry
-          
+
           label="Password"
           placeholder="Password"
           onChangeText={this.onPasswordChange.bind(this)}
@@ -70,6 +71,7 @@ class LoginForm extends Component {
 
 
       </Card>
+      </Image>
     );
   }
 }
@@ -78,6 +80,7 @@ const styles = {
   errorTextStyle: {
     fontSize: 20,
     alignSelf: 'center',
+    backgroundColor: 'transparent',
     color: 'red'
   }
 };
